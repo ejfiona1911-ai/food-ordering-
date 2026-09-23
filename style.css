@@ -244,3 +244,52 @@ nav {
 .food-card button:hover {
   background: #e85a2a;
 }
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #fff8f0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: #ff6b35;
+    color: white;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h2 {
+    font-size: 45px;
+}
+
+.hero p {
+    font-size: 20px;
+}
+
+.menu-button {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 15px 30px;
+    background: #ff6b35;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+.about {
+    text-align: center;
+    padding: 50px;
+}
