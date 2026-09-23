@@ -1,33 +1,360 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>FoodieHub - Home</title>
-    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #fff8f0;
+            color: #333;
+        }
+
+        /* HEADER */
+        header {
+            background: white;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            color: #ff6b35;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            margin-left: 30px;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            color: #ff6b35;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 570px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 60px 8%;
+            background: linear-gradient(120deg, #fff1e6, #fff8f0);
+        }
+
+        .hero-text {
+            max-width: 550px;
+        }
+
+        .hero-text h1 {
+            font-size: 55px;
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .hero-text h1 span {
+            color: #ff6b35;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .buttons a {
+            display: inline-block;
+            text-decoration: none;
+            padding: 14px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            margin-right: 10px;
+        }
+
+        .order-btn {
+            background: #ff6b35;
+            color: white;
+        }
+
+        .menu-btn {
+            border: 2px solid #ff6b35;
+            color: #ff6b35;
+        }
+
+        .hero-image img {
+            width: 450px;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.18);
+        }
+
+        /* POPULAR */
+        .popular {
+            padding: 60px 8%;
+            text-align: center;
+        }
+
+        .popular h2 {
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #777;
+            margin-bottom: 35px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.1);
+            transition: 0.3s;
+            text-align: left;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 18px;
+        }
+
+        .card-content h3 {
+            margin-bottom: 7px;
+        }
+
+        .card-content p {
+            color: #777;
+            font-size: 14px;
+        }
+
+        .price {
+            color: #ff6b35;
+            font-weight: 700;
+            font-size: 19px;
+            margin-top: 10px;
+        }
+
+        /* WHY US */
+        .why {
+            background: #ff6b35;
+            color: white;
+            text-align: center;
+            padding: 60px 8%;
+        }
+
+        .why h2 {
+            font-size: 35px;
+            margin-bottom: 35px;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .feature {
+            background: rgba(255,255,255,0.15);
+            padding: 25px;
+            border-radius: 15px;
+        }
+
+        .feature .icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .feature h3 {
+            margin-bottom: 8px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        @media (max-width: 800px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 40px;
+            }
+
+            .hero-image img {
+                width: 300px;
+                height: 300px;
+                margin-top: 40px;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
 <header>
-    <h1>🍴 FoodieHub</h1>
+    <div class="logo">🍴 FoodieHub</div>
+
     <nav>
         <a href="index.html">Home</a>
         <a href="menu.html">Menu</a>
     </nav>
 </header>
 
+
+<!-- HERO SECTION -->
 <section class="hero">
-    <h2>Welcome to FoodieHub!</h2>
-    <p>Delicious food delivered to your doorstep.</p>
 
-    <a href="menu.html" class="menu-button">
-        View Our Menu
-    </a>
+    <div class="hero-text">
+        <h1>
+            Delicious food,
+            <span>delivered fast!</span>
+        </h1>
+
+        <p>
+            Discover your favourite meals and enjoy delicious food
+            delivered straight to your doorstep.
+        </p>
+
+        <div class="buttons">
+            <a href="menu.html" class="order-btn">Order Now 🍽️</a>
+            <a href="menu.html" class="menu-btn">View Menu</a>
+        </div>
+    </div>
+
+    <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80">
+    </div>
+
 </section>
 
-<section class="about">
+
+<!-- POPULAR FOOD -->
+<section class="popular">
+
+    <h2>🔥 Popular Today</h2>
+
+    <p class="subtitle">
+        Some of our customers' favourite dishes
+    </p>
+
+    <div class="cards">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=80">
+
+            <div class="card-content">
+                <h3>🍕 Margherita Pizza</h3>
+                <p>Cheesy, delicious and freshly baked.</p>
+                <div class="price">₹199</div>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80">
+
+            <div class="card-content">
+                <h3>🍔 Classic Burger</h3>
+                <p>Juicy burger with fresh vegetables.</p>
+                <div class="price">₹149</div>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=800&q=80">
+
+            <div class="card-content">
+                <h3>🍝 Creamy Pasta</h3>
+                <p>Rich, creamy and full of flavour.</p>
+                <div class="price">₹179</div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- WHY CHOOSE US -->
+<section class="why">
+
     <h2>Why Choose FoodieHub?</h2>
-    <p>Fresh food, great taste and easy online ordering.</p>
+
+    <div class="features">
+
+        <div class="feature">
+            <div class="icon">🚀</div>
+            <h3>Fast Delivery</h3>
+            <p>Get your favourite food delivered quickly.</p>
+        </div>
+
+        <div class="feature">
+            <div class="icon">🥗</div>
+            <h3>Fresh Food</h3>
+            <p>Fresh and tasty meals prepared with care.</p>
+        </div>
+
+        <div class="feature">
+            <div class="icon">❤️</div>
+            <h3>Made With Love</h3>
+            <p>Good food and a great experience every time.</p>
+        </div>
+
+    </div>
+
 </section>
+
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 FoodieHub | Delicious food delivered to your doorstep ❤️</p>
+</footer>
 
 </body>
 </html>
