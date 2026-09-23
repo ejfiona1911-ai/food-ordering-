@@ -193,3 +193,54 @@ nav {
 
 .cart-section h3 {
     margin:
+.menu {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.menu h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.menu-container {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.food-card {
+  width: 220px;
+  padding: 20px;
+  border-radius: 15px;
+  background: white;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.food-image {
+  font-size: 70px;
+  padding: 15px;
+}
+
+.food-card h3 {
+  margin: 10px 0;
+}
+
+.food-card h4 {
+  font-size: 20px;
+}
+
+.food-card button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background: #ff6b35;
+  color: white;
+  cursor: pointer;
+}
+
+.food-card button:hover {
+  background: #e85a2a;
+}
